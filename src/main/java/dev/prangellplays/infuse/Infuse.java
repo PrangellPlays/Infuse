@@ -1,6 +1,8 @@
 package dev.prangellplays.infuse;
 
 import dev.prangellplays.infuse.registry.InfuseEffects;
+import dev.prangellplays.infuse.registry.InfuseItemGroups;
+import dev.prangellplays.infuse.registry.InfuseItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
@@ -19,6 +21,8 @@ public class Infuse implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		InfuseEffects.init();
+		InfuseItems.init();
+		InfuseItemGroups.init();
 	}
 	public static Identifier id(String path) {
 		return new Identifier(MOD_ID, path);
