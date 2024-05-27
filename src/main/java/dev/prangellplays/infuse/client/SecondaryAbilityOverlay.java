@@ -10,9 +10,9 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.util.Identifier;
 
-public class MainAbilityOverlay implements HudRenderCallback {
-    private static final Identifier MAIN_ABILITY_OVERLAY = new Identifier(Infuse.MOD_ID, "textures/hud/ability/main/main_ability_overlay.png");
-    private static final Identifier MAIN_ABILITY_FEATHER = new Identifier(Infuse.MOD_ID, "textures/hud/ability/main/main_ability_feather.png");
+public class SecondaryAbilityOverlay implements HudRenderCallback {
+    private static final Identifier SECONDARY_ABILITY_OVERLAY = new Identifier(Infuse.MOD_ID, "textures/hud/ability/secondary/secondary_ability_overlay.png");
+    private static final Identifier SECONDARY_ABILITY_SPEED = new Identifier(Infuse.MOD_ID, "textures/hud/ability/secondary/secondary_ability_speed.png");
 
     @Override
     public void onHudRender(DrawContext drawContext, float tickDelta) {
@@ -31,22 +31,21 @@ public class MainAbilityOverlay implements HudRenderCallback {
             return;
         }
         else {
-            if (client.player.hasStatusEffect(InfuseEffects.FEATHER)) {
+            if (client.player.hasStatusEffect(InfuseEffects.SPEED)) {
                 RenderSystem.setShader(GameRenderer::getPositionTexProgram);
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-                RenderSystem.setShaderTexture(0, MAIN_ABILITY_FEATHER);
+                RenderSystem.setShaderTexture(0, SECONDARY_ABILITY_SPEED);
                 TextRenderer textRenderer = MinecraftClient.getInstance().inGameHud.getTextRenderer();
                 for (int i = 0; i < 1; i++) {
-                    drawContext.drawTexture(MAIN_ABILITY_FEATHER, x - 30, y - 61, 0, 0, 20, 20, 20, 20);
+                    drawContext.drawTexture(SECONDARY_ABILITY_SPEED, x + 10, y - 61, 0, 0, 20, 20, 20, 20);
                 }
-            }
-            else {
+            } else {
                 RenderSystem.setShader(GameRenderer::getPositionTexProgram);
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-                RenderSystem.setShaderTexture(0, MAIN_ABILITY_OVERLAY);
+                RenderSystem.setShaderTexture(0, SECONDARY_ABILITY_OVERLAY);
                 TextRenderer textRenderer = MinecraftClient.getInstance().inGameHud.getTextRenderer();
                 for (int i = 0; i < 1; i++) {
-                    drawContext.drawTexture(MAIN_ABILITY_OVERLAY, x - 30, y - 61, 0, 0, 20, 20, 20, 20);
+                    drawContext.drawTexture(SECONDARY_ABILITY_OVERLAY, x + 10, y - 61, 0, 0, 20, 20, 20, 20);
                 }
             }
         }

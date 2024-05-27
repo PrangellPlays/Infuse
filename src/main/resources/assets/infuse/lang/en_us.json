@@ -1,5 +1,9 @@
 {
   "_comment": "Items",
+  "item.infuse.feather_crystal": "Feather Ability Crystal",
+  "item.infuse.speed_crystal": "Speed Ability Crystal",
+  "item.infuse.primary_ability_crystal.description": "Use to infuse your primary ability",
+  "item.infuse.secondary_ability_crystal.description": "Use to infuse your secondary ability",
 
   "_comment": "Blocks",
 

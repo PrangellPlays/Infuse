@@ -1,4 +1,4 @@
-package dev.prangellplays.infuse.effect.main;
+package dev.prangellplays.infuse.effect.primary;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
