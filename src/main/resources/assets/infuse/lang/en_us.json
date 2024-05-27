@@ -1,0 +1,16 @@
+{
+  "_comment": "Items",
+
+  "_comment": "Blocks",
+
+  "_comment": "Entities",
+
+  "_comment": "Sounds",
+
+  "_comment": "Effects",
+  "effect.infuse.feather": "§fFeather",
+  "effect.infuse.speed": "§fSpeed",
+
+  "_comment": "Item Groups",
+  "itemgroup.items": "Infuse Items"
+}

@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "infuse",
+	"version": "${version}",
+	"name": "Infuse",
+	"description": "Infuse the player with unique crystals to gain abilities!",
+	"authors": [
+		"Owner - PrangellPlays"
+	],
+	"license": "PrangellPlays",
+	"icon": "assets/infuse/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.prangellplays.infuse.Infuse"
+		],
+		"client": [
+			"dev.prangellplays.infuse.InfuseClient"
+		],
+		"fabric-datagen": [
+			"dev.prangellplays.infuse.InfuseDataGenerator"
+		]
+	},
+	"mixins": [
+		"infuse.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
