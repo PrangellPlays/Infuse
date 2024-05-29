@@ -3,6 +3,7 @@ package dev.prangellplays.infuse.registry;
 import dev.prangellplays.infuse.Infuse;
 import dev.prangellplays.infuse.item.ability_crystal.primary.FeatherAbilityCrystal;
 import dev.prangellplays.infuse.item.ability_crystal.secondary.SpeedAbilityCrystal;
+import dev.prangellplays.infuse.item.ability_crystal.tertiary.DragonAbilityCrystal;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -15,6 +16,9 @@ public class InfuseItems {
 
     //Secondary Ability Crystal
     public static final Item SPEED_ABILITY_CRYSTAL = registerItem("speed_ability_crystal", new SpeedAbilityCrystal(new FabricItemSettings().maxCount(1)));
+
+    //Tertiary Ability Crystal
+    public static final Item DRAGON_ABILITY_CRYSTAL = registerItem("dragon_ability_crystal", new DragonAbilityCrystal(new FabricItemSettings().maxCount(1)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(Infuse.MOD_ID, name), item);

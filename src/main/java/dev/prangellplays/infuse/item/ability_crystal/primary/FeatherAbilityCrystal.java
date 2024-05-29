@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.network.packet.s2c.play.OverlayMessageS2CPacket;
 import net.minecraft.network.packet.s2c.play.TitleS2CPacket;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -34,7 +35,7 @@ public class FeatherAbilityCrystal extends Item {
         user.setStatusEffect(new StatusEffectInstance(InfuseEffects.FEATHER, StatusEffectInstance.INFINITE, 0, false, false), user);
         user.setStackInHand(hand, Items.AIR.getDefaultStack());
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
-            serverPlayerEntity.networkHandler.sendPacket(new TitleS2CPacket(Text.translatable("item.infuse.primary_ability_crystal.activated").formatted(Formatting.GRAY).formatted(Formatting.UNDERLINE)));
+            serverPlayerEntity.networkHandler.sendPacket(new OverlayMessageS2CPacket(Text.translatable("item.infuse.primary_ability_crystal.activated").formatted(Formatting.GRAY).formatted(Formatting.UNDERLINE)));
         }
         world.playSound(user.getX(), user.getY(), user.getZ(), SoundEvents.ITEM_TOTEM_USE, SoundCategory.MASTER, 100.0F, (1.0F + (new Random().nextFloat() - new Random().nextFloat()) * 0.2F) * 0.7F, false);
         MinecraftClient.getInstance().gameRenderer.showFloatingItem(InfuseItems.FEATHER_ABILITY_CRYSTAL.getDefaultStack());

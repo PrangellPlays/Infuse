@@ -1,4 +1,4 @@
-package dev.prangellplays.infuse.item.ability_crystal.secondary;
+package dev.prangellplays.infuse.item.ability_crystal.tertiary;
 
 import dev.prangellplays.infuse.registry.InfuseEffects;
 import dev.prangellplays.infuse.registry.InfuseItems;
@@ -10,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.packet.s2c.play.OverlayMessageS2CPacket;
-import net.minecraft.network.packet.s2c.play.TitleS2CPacket;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -24,18 +23,18 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class SpeedAbilityCrystal extends Item {
-    public SpeedAbilityCrystal(Settings settings) {
+public class DragonAbilityCrystal extends Item {
+    public DragonAbilityCrystal(Settings settings) {
         super(settings);
     }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        user.removeStatusEffect(InfuseEffects.SPEED);
-        user.setStatusEffect(new StatusEffectInstance(InfuseEffects.SPEED, StatusEffectInstance.INFINITE, 0, false, false), user);
+        user.removeStatusEffect(InfuseEffects.DRAGON);
+        user.setStatusEffect(new StatusEffectInstance(InfuseEffects.DRAGON, StatusEffectInstance.INFINITE, 0, false, false), user);
         user.setStackInHand(hand, Items.AIR.getDefaultStack());
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
-            serverPlayerEntity.networkHandler.sendPacket(new OverlayMessageS2CPacket(Text.translatable("item.infuse.secondary_ability_crystal.activated").formatted(Formatting.GRAY).formatted(Formatting.UNDERLINE)));
+            serverPlayerEntity.networkHandler.sendPacket(new OverlayMessageS2CPacket(Text.translatable("item.infuse.tertiary_ability_crystal.activated").formatted(Formatting.GRAY).formatted(Formatting.UNDERLINE)));
         }
         world.playSound(user.getX(), user.getY(), user.getZ(), SoundEvents.ITEM_TOTEM_USE, SoundCategory.MASTER, 100.0F, (1.0F + (new Random().nextFloat() - new Random().nextFloat()) * 0.2F) * 0.7F, false);
         MinecraftClient.getInstance().gameRenderer.showFloatingItem(InfuseItems.SPEED_ABILITY_CRYSTAL.getDefaultStack());
@@ -45,7 +44,7 @@ public class SpeedAbilityCrystal extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         {
-            tooltip.add(Text.translatable("item.infuse.secondary_ability_crystal.description"));
+            tooltip.add(Text.translatable("item.infuse.tertiary_ability_crystal.description"));
         }
         super.appendTooltip(stack, world, tooltip, context);
     }

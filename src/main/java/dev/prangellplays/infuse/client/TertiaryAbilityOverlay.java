@@ -10,9 +10,8 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.util.Identifier;
 
-public class SecondaryAbilityOverlay implements HudRenderCallback {
-    private static final Identifier SECONDARY_ABILITY_OVERLAY = new Identifier(Infuse.MOD_ID, "textures/hud/ability/secondary/tertiary_ability_dragon.png");
-    private static final Identifier SECONDARY_ABILITY_SPEED = new Identifier(Infuse.MOD_ID, "textures/hud/ability/secondary/secondary_ability_speed.png");
+public class TertiaryAbilityOverlay implements HudRenderCallback {
+    private static final Identifier TERTIARY_ABILITY_DRAGON = new Identifier(Infuse.MOD_ID, "textures/hud/ability/tertiary/tertiary_ability_dragon.png");
 
     @Override
     public void onHudRender(DrawContext drawContext, float tickDelta) {
@@ -31,22 +30,17 @@ public class SecondaryAbilityOverlay implements HudRenderCallback {
             return;
         }
         else {
-            if (client.player.hasStatusEffect(InfuseEffects.SPEED)) {
+            if (client.player.hasStatusEffect(InfuseEffects.DRAGON)) {
                 RenderSystem.setShader(GameRenderer::getPositionTexProgram);
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-                RenderSystem.setShaderTexture(0, SECONDARY_ABILITY_SPEED);
+                RenderSystem.setShaderTexture(0, TERTIARY_ABILITY_DRAGON);
                 TextRenderer textRenderer = MinecraftClient.getInstance().inGameHud.getTextRenderer();
                 for (int i = 0; i < 1; i++) {
-                    drawContext.drawTexture(SECONDARY_ABILITY_SPEED, x + 10, y - 61, 0, 0, 20, 20, 20, 20);
+                    drawContext.drawTexture(TERTIARY_ABILITY_DRAGON, x - 10, y - 78, 0, 0, 20, 20, 20, 20);
                 }
-            } else {
-                RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-                RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-                RenderSystem.setShaderTexture(0, SECONDARY_ABILITY_OVERLAY);
-                TextRenderer textRenderer = MinecraftClient.getInstance().inGameHud.getTextRenderer();
-                for (int i = 0; i < 1; i++) {
-                    drawContext.drawTexture(SECONDARY_ABILITY_OVERLAY, x + 10, y - 61, 0, 0, 20, 20, 20, 20);
-                }
+            }
+            else {
+                return;
             }
         }
     }

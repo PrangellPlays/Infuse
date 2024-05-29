@@ -1,0 +1,6 @@
+{
+	"parent": "infuse:item/ability_crystal",
+	"textures": {
+		"layer0": "infuse:item/ability_crystal/secondary/speed_ability_crystal"
+	}
+}

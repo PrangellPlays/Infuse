@@ -26,6 +26,11 @@ public class InfuseItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.secondary_abilities")).icon(() -> new ItemStack(InfuseItems.SPEED_ABILITY_CRYSTAL)).entries((displayContext, entries) -> {
                 entries.add(InfuseItems.SPEED_ABILITY_CRYSTAL);
             }).build());
+    public static final ItemGroup INFUSE_TERTIARY_ABILITIES_GROUP = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(Infuse.MOD_ID, "tertiary_abilities"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.tertiary_abilities")).icon(() -> new ItemStack(InfuseItems.DRAGON_ABILITY_CRYSTAL)).entries((displayContext, entries) -> {
+                entries.add(InfuseItems.DRAGON_ABILITY_CRYSTAL);
+            }).build());
 
 
     public static void init() {

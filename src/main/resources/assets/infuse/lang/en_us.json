@@ -1,11 +1,14 @@
 {
   "_comment": "Items",
-  "item.infuse.feather_crystal": "Feather Ability Crystal",
-  "item.infuse.speed_crystal": "Speed Ability Crystal",
+  "item.infuse.feather_ability_crystal": "Feather Ability Crystal",
+  "item.infuse.speed_ability_crystal": "Speed Ability Crystal",
+  "item.infuse.dragon_ability_crystal": "Dragon Ability Crystal",
   "item.infuse.primary_ability_crystal.description": "Use to infuse your primary ability",
   "item.infuse.primary_ability_crystal.activated": "Primary Ability Activated",
   "item.infuse.secondary_ability_crystal.description": "Use to infuse your secondary ability",
   "item.infuse.secondary_ability_crystal.activated": "Secondary Ability Activated",
+  "item.infuse.tertiary_ability_crystal.description": "Use to infuse your tertiary ability",
+  "item.infuse.tertiary_ability_crystal.activated": "Tertiary Ability Activated",
 
   "_comment": "Blocks",
 
@@ -16,9 +19,11 @@
   "_comment": "Effects",
   "effect.infuse.feather": "§fFeather",
   "effect.infuse.speed": "§fSpeed",
+  "effect.infuse.dragon": "§fDragon",
 
   "_comment": "Item Groups",
   "itemgroup.items": "Infuse Items",
   "itemgroup.primary_abilities": "Infuse Primary Abilities",
-  "itemgroup.secondary_abilities": "Infuse Secondary Abilities"
+  "itemgroup.secondary_abilities": "Infuse Secondary Abilities",
+  "itemgroup.tertiary_abilities": "Infuse Tertiary Abilities"
 }
